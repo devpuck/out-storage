@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.outstorage.OutWarehouseBillMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.model.entity.OutWarehouseBillEntity">
+        <id column="ID" property="id" />
+    <result column="CREATED_BY" property="createdBy" />
+    <result column="CREATED_DATE" property="createdDate" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+    <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" />
+    <result column="DELETED_BY" property="deletedBy" />
+    <result column="DELETED_DATE" property="deletedDate" />
+    <result column="IS_DELETED" property="isDeleted" />
+        <result column="REQUIREMENT_ID" property="requirementId" />
+        <result column="SYSTEM_FROM" property="systemFrom" />
+        <result column="BILL_CODE" property="billCode" />
+        <result column="TARGET_CODE" property="targetCode" />
+        <result column="TARGET_TYPE" property="targetType" />
+        <result column="WORK_CODE" property="workCode" />
+        <result column="DEAL_CODE" property="dealCode" />
+        <result column="OUT_PERSON" property="outPerson" />
+        <result column="OUT_DEPT" property="outDept" />
+        <result column="WAREHOUSE_CODE" property="warehouseCode" />
+        <result column="OUT_OPERATOR" property="outOperator" />
+        <result column="OUT_OPERATOR_DEPT" property="outOperatorDept" />
+        <result column="OUT_OPERATOR_TIME" property="outOperatorTime" />
+        <result column="STATUS" property="status" />
+        <result column="VERSION" property="version" />
+        <result column="NOTE" property="note" />
+    </resultMap>
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BoResultMap" type="com.wms.model.bo.outstorage.OutWarehouseBillBo">
+        <id column="ID" property="id" />
+        <result column="CREATED_BY" property="createdBy" />
+        <result column="CREATED_DATE" property="createdDate" />
+        <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+        <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" />
+        <result column="DELETED_BY" property="deletedBy" />
+        <result column="DELETED_DATE" property="deletedDate" />
+        <result column="IS_DELETED" property="isDeleted" />
+                <result column="REQUIREMENT_ID" property="requirementId" />
+                <result column="SYSTEM_FROM" property="systemFrom" />
+                <result column="BILL_CODE" property="billCode" />
+                <result column="TARGET_CODE" property="targetCode" />
+                <result column="TARGET_TYPE" property="targetType" />
+                <result column="WORK_CODE" property="workCode" />
+                <result column="DEAL_CODE" property="dealCode" />
+                <result column="OUT_PERSON" property="outPerson" />
+                <result column="OUT_DEPT" property="outDept" />
+                <result column="WAREHOUSE_CODE" property="warehouseCode" />
+                <result column="OUT_OPERATOR" property="outOperator" />
+                <result column="OUT_OPERATOR_DEPT" property="outOperatorDept" />
+                <result column="OUT_OPERATOR_TIME" property="outOperatorTime" />
+                <result column="STATUS" property="status" />
+                <result column="VERSION" property="version" />
+                <result column="NOTE" property="note" />
+        </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CREATED_BY,
+        CREATED_DATE,
+        LAST_UPDATED_BY,
+        LAST_UPDATED_DATE,
+        DELETED_BY,
+        DELETED_DATE,
+        IS_DELETED,
+        ID, REQUIREMENT_ID, SYSTEM_FROM, BILL_CODE, TARGET_CODE, TARGET_TYPE, WORK_CODE, DEAL_CODE, OUT_PERSON, OUT_DEPT, WAREHOUSE_CODE, OUT_OPERATOR, OUT_OPERATOR_DEPT, OUT_OPERATOR_TIME, STATUS, VERSION, NOTE
+    </sql>
+
+    <select id="getOutWarehouseBillById" resultMap="BoResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WMS_OUT_WAREHOUSE_BILL where id = #{id}
+    </select>
+
+    <select id="getOutWarehouseBillPageList" resultMap="BoResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WMS_OUT_WAREHOUSE_BILL
+    </select>
+
+</mapper>
