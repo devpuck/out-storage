@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
  * </pre>
  *
  * @author puck
- * @since 2020-12-22
+ * @since 2021-01-09
  */
 @Data
 @Accessors(chain = true)
@@ -69,6 +69,11 @@ public class ConfigOutWarehouseEntity extends BaseEntity {
      * 配置状态
      */
     private String status;
+
+    /**
+     * 配置类型，出库类型比较多，单独配置比较复杂，需要设计一些默认配置。系统默认为system_default,用户创建为user_create
+     */
+    private String configType;
 
     /**
      * 版本

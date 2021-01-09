@@ -31,7 +31,7 @@ public class SpringBootPlusGenerator {
 
         // 组件作者等配置
         codeGenerator
-                .setModuleName("outstorage")
+                .setModuleName("config")
                 .setAuthor("puck")
                 .setPkIdColumnName("id");
 
@@ -68,7 +68,7 @@ public class SpringBootPlusGenerator {
         // 需要生成的表数组
         // xxx,yyy,zzz为需要生成代码的表名称
         String[] tables = {
-                "WMS_OUT_WAREHOUSE_BILL_SUB"
+                "CONFIG_OUT_WAREHOUSE"
         };
 
         // 循环生成

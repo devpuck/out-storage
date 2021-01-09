@@ -32,7 +32,8 @@ import com.xac.core.api.Paging;
 @RestController
 @RequestMapping("/outstorage")
 @Api("出库单据 API")
-public class OutWarehouseBillController extends BaseController {
+public class OutWarehouseBillController extends BaseController
+{
 
     @Autowired
     private OutWarehouseBillService outWarehouseBillService;
@@ -42,9 +43,10 @@ public class OutWarehouseBillController extends BaseController {
      */
     @PostMapping("/add")
     @ApiOperation(value = "添加OutWarehouseBill对象", notes = "添加出库单据", response = ApiResult.class)
-    public ApiResult<Boolean> addOutWarehouseBill(@Valid @RequestBody OutWarehouseBillVo outWarehouseBill) throws Exception {
-         OutWarehouseBillBo bo = new OutWarehouseBillBo();
-        BeanUtils.copyProperties(outWarehouseBill,bo);
+    public ApiResult<Boolean> addOutWarehouseBill(@Valid @RequestBody OutWarehouseBillVo outWarehouseBill) throws Exception
+    {
+        OutWarehouseBillBo bo = new OutWarehouseBillBo();
+        BeanUtils.copyProperties(outWarehouseBill, bo);
 
         boolean flag = outWarehouseBillService.saveOutWarehouseBill(bo);
         return ApiResult.result(flag);
@@ -55,9 +57,10 @@ public class OutWarehouseBillController extends BaseController {
      */
     @PostMapping("/update")
     @ApiOperation(value = "修改OutWarehouseBill对象", notes = "修改出库单据", response = ApiResult.class)
-    public ApiResult<Boolean> updateOutWarehouseBill(@Valid @RequestBody OutWarehouseBillVo outWarehouseBill) throws Exception {
+    public ApiResult<Boolean> updateOutWarehouseBill(@Valid @RequestBody OutWarehouseBillVo outWarehouseBill) throws Exception
+    {
         OutWarehouseBillBo bo = new OutWarehouseBillBo();
-        BeanUtils.copyProperties(outWarehouseBill,bo);
+        BeanUtils.copyProperties(outWarehouseBill, bo);
 
         boolean flag = outWarehouseBillService.updateOutWarehouseBill(bo);
         return ApiResult.result(flag);
@@ -68,7 +71,8 @@ public class OutWarehouseBillController extends BaseController {
      */
     @PostMapping("/delete/{id}")
     @ApiOperation(value = "删除OutWarehouseBill对象", notes = "删除出库单据", response = ApiResult.class)
-    public ApiResult<Boolean> deleteOutWarehouseBill(@PathVariable("id") Long id) throws Exception {
+    public ApiResult<Boolean> deleteOutWarehouseBill(@PathVariable("id") Long id) throws Exception
+    {
         boolean flag = outWarehouseBillService.deleteOutWarehouseBill(id);
         return ApiResult.result(flag);
     }
@@ -78,12 +82,14 @@ public class OutWarehouseBillController extends BaseController {
      */
     @GetMapping("/info/{id}")
     @ApiOperation(value = "获取OutWarehouseBill对象详情", notes = "查看出库单据", response = OutWarehouseBillVo.class)
-    public ApiResult<OutWarehouseBillVo> getOutWarehouseBill(@PathVariable("id") Long id) throws Exception {
+    public ApiResult<OutWarehouseBillVo> getOutWarehouseBill(@PathVariable("id") Long id) throws Exception
+    {
         OutWarehouseBillBo outWarehouseBillBo = outWarehouseBillService.getOutWarehouseBillById(id);
         OutWarehouseBillVo queryVo = null;
-        if (outWarehouseBillBo != null) {
+        if (outWarehouseBillBo != null)
+        {
             queryVo = new OutWarehouseBillVo();
-            BeanUtils.copyProperties(outWarehouseBillBo , queryVo);
+            BeanUtils.copyProperties(outWarehouseBillBo, queryVo);
         }
         return ApiResult.ok(queryVo);
     }
@@ -93,7 +99,8 @@ public class OutWarehouseBillController extends BaseController {
      */
     @PostMapping("/pagelist")
     @ApiOperation(value = "获取OutWarehouseBill分页列表", notes = "出库单据分页列表", response = OutWarehouseBillVo.class)
-    public ApiResult<Paging<OutWarehouseBillVo>> getOutWarehouseBillPageList(@Valid @RequestBody OutWarehouseBillQueryParam outWarehouseBillQueryParam) throws Exception {
+    public ApiResult<Paging<OutWarehouseBillVo>> getOutWarehouseBillPageList(@Valid @RequestBody OutWarehouseBillQueryParam outWarehouseBillQueryParam) throws Exception
+    {
         Paging<OutWarehouseBillBo> paging = outWarehouseBillService.getOutWarehouseBillPageList(outWarehouseBillQueryParam);
         Paging<OutWarehouseBillVo> resultPage = new Paging<>();
         resultPage.setTotal(paging.getTotal());

@@ -32,7 +32,8 @@ import com.xac.core.api.Paging;
 @RestController
 @RequestMapping("/config")
 @Api("出库业务配置 API")
-public class ConfigSepcOutWarehouseController extends BaseController {
+public class ConfigSepcOutWarehouseController extends BaseController
+{
 
     @Autowired
     private ConfigSepcOutWarehouseService configSepcOutWarehouseService;
@@ -42,9 +43,10 @@ public class ConfigSepcOutWarehouseController extends BaseController {
      */
     @PostMapping("/add")
     @ApiOperation(value = "添加ConfigSepcOutWarehouse对象", notes = "添加出库业务配置", response = ApiResult.class)
-    public ApiResult<Boolean> addConfigSepcOutWarehouse(@Valid @RequestBody ConfigSepcOutWarehouseVo configSepcOutWarehouse) throws Exception {
-         ConfigSepcOutWarehouseBo bo = new ConfigSepcOutWarehouseBo();
-        BeanUtils.copyProperties(configSepcOutWarehouse,bo);
+    public ApiResult<Boolean> addConfigSepcOutWarehouse(@Valid @RequestBody ConfigSepcOutWarehouseVo configSepcOutWarehouse) throws Exception
+    {
+        ConfigSepcOutWarehouseBo bo = new ConfigSepcOutWarehouseBo();
+        BeanUtils.copyProperties(configSepcOutWarehouse, bo);
 
         boolean flag = configSepcOutWarehouseService.saveConfigSepcOutWarehouse(bo);
         return ApiResult.result(flag);
@@ -55,9 +57,10 @@ public class ConfigSepcOutWarehouseController extends BaseController {
      */
     @PostMapping("/update")
     @ApiOperation(value = "修改ConfigSepcOutWarehouse对象", notes = "修改出库业务配置", response = ApiResult.class)
-    public ApiResult<Boolean> updateConfigSepcOutWarehouse(@Valid @RequestBody ConfigSepcOutWarehouseVo configSepcOutWarehouse) throws Exception {
+    public ApiResult<Boolean> updateConfigSepcOutWarehouse(@Valid @RequestBody ConfigSepcOutWarehouseVo configSepcOutWarehouse) throws Exception
+    {
         ConfigSepcOutWarehouseBo bo = new ConfigSepcOutWarehouseBo();
-        BeanUtils.copyProperties(configSepcOutWarehouse,bo);
+        BeanUtils.copyProperties(configSepcOutWarehouse, bo);
 
         boolean flag = configSepcOutWarehouseService.updateConfigSepcOutWarehouse(bo);
         return ApiResult.result(flag);
@@ -68,7 +71,8 @@ public class ConfigSepcOutWarehouseController extends BaseController {
      */
     @PostMapping("/delete/{id}")
     @ApiOperation(value = "删除ConfigSepcOutWarehouse对象", notes = "删除出库业务配置", response = ApiResult.class)
-    public ApiResult<Boolean> deleteConfigSepcOutWarehouse(@PathVariable("id") Long id) throws Exception {
+    public ApiResult<Boolean> deleteConfigSepcOutWarehouse(@PathVariable("id") Long id) throws Exception
+    {
         boolean flag = configSepcOutWarehouseService.deleteConfigSepcOutWarehouse(id);
         return ApiResult.result(flag);
     }
@@ -78,12 +82,14 @@ public class ConfigSepcOutWarehouseController extends BaseController {
      */
     @GetMapping("/info/{id}")
     @ApiOperation(value = "获取ConfigSepcOutWarehouse对象详情", notes = "查看出库业务配置", response = ConfigSepcOutWarehouseVo.class)
-    public ApiResult<ConfigSepcOutWarehouseVo> getConfigSepcOutWarehouse(@PathVariable("id") Long id) throws Exception {
+    public ApiResult<ConfigSepcOutWarehouseVo> getConfigSepcOutWarehouse(@PathVariable("id") Long id) throws Exception
+    {
         ConfigSepcOutWarehouseBo configSepcOutWarehouseBo = configSepcOutWarehouseService.getConfigSepcOutWarehouseById(id);
         ConfigSepcOutWarehouseVo queryVo = null;
-        if (configSepcOutWarehouseBo != null) {
+        if (configSepcOutWarehouseBo != null)
+        {
             queryVo = new ConfigSepcOutWarehouseVo();
-            BeanUtils.copyProperties(configSepcOutWarehouseBo , queryVo);
+            BeanUtils.copyProperties(configSepcOutWarehouseBo, queryVo);
         }
         return ApiResult.ok(queryVo);
     }
@@ -93,7 +99,8 @@ public class ConfigSepcOutWarehouseController extends BaseController {
      */
     @PostMapping("/pagelist")
     @ApiOperation(value = "获取ConfigSepcOutWarehouse分页列表", notes = "出库业务配置分页列表", response = ConfigSepcOutWarehouseVo.class)
-    public ApiResult<Paging<ConfigSepcOutWarehouseVo>> getConfigSepcOutWarehousePageList(@Valid @RequestBody ConfigSepcOutWarehouseQueryParam configSepcOutWarehouseQueryParam) throws Exception {
+    public ApiResult<Paging<ConfigSepcOutWarehouseVo>> getConfigSepcOutWarehousePageList(@Valid @RequestBody ConfigSepcOutWarehouseQueryParam configSepcOutWarehouseQueryParam) throws Exception
+    {
         Paging<ConfigSepcOutWarehouseBo> paging = configSepcOutWarehouseService.getConfigSepcOutWarehousePageList(configSepcOutWarehouseQueryParam);
         Paging<ConfigSepcOutWarehouseVo> resultPage = new Paging<>();
         resultPage.setTotal(paging.getTotal());

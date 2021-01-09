@@ -19,6 +19,7 @@
         <result column="NEED_PRODUCTION_STATUS" property="needProductionStatus" />
         <result column="NEED_QUALITY" property="needQuality" />
         <result column="STATUS" property="status" />
+        <result column="CONFIG_TYPE" property="configType" />
         <result column="VERSION" property="version" />
     </resultMap>
 
@@ -40,6 +41,7 @@
                 <result column="NEED_PRODUCTION_STATUS" property="needProductionStatus" />
                 <result column="NEED_QUALITY" property="needQuality" />
                 <result column="STATUS" property="status" />
+                <result column="CONFIG_TYPE" property="configType" />
                 <result column="VERSION" property="version" />
         </resultMap>
 
@@ -52,7 +54,7 @@
         DELETED_BY,
         DELETED_DATE,
         IS_DELETED,
-        ID, CONFIG_CODE, WAREHOUSE_CODE, WAREHOUSE_WORK_CODE, WAREHOUSE_DEAL_CODE, NEED_PRODUCTION_STATUS, NEED_QUALITY, STATUS, VERSION
+        ID, CONFIG_CODE, WAREHOUSE_CODE, WAREHOUSE_WORK_CODE, WAREHOUSE_DEAL_CODE, NEED_PRODUCTION_STATUS, NEED_QUALITY, STATUS, CONFIG_TYPE, VERSION
     </sql>
 
     <select id="getConfigOutWarehouseById" resultMap="BoResultMap">
