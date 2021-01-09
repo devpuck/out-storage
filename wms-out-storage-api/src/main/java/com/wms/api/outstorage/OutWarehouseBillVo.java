@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import com.xac.core.vo.BaseVo;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 import java.util.Date;
@@ -20,7 +21,8 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @ApiModel(value = "OutWarehouseBillVo对象", description = "出库单据查询参数")
-public class OutWarehouseBillVo extends BaseVo implements Serializable {
+public class OutWarehouseBillVo extends BaseVo implements Serializable
+{
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "表id")

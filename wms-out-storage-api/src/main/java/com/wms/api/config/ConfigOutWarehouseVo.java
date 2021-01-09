@@ -15,7 +15,7 @@ import java.util.Date;
  * </pre>
  *
  * @author puck
- * @date 2020-12-22
+ * @date 2021-01-09
  */
 @Data
 @Accessors(chain = true)
@@ -46,6 +46,9 @@ public class ConfigOutWarehouseVo extends BaseVo implements Serializable {
 
     @ApiModelProperty(value = "配置状态")
     private String status;
+
+    @ApiModelProperty(value = "配置类型，出库类型比较多，单独配置比较复杂，需要设计一些默认配置。系统默认为system_default,用户创建为user_create")
+    private String configType;
 
     @ApiModelProperty(value = "版本")
     private String version;
