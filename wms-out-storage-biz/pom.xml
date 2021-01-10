@@ -12,6 +12,21 @@
     <dependencies>
         <dependency>
             <groupId>com.wms</groupId>
+            <artifactId>wms-sdk</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.nls</groupId>
+            <artifactId>orai18n</artifactId>
+            <version>19.8.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wms</groupId>
+            <artifactId>wms-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.wms</groupId>
             <artifactId>wms-out-storage-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

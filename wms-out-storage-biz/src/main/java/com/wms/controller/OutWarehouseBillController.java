@@ -1,5 +1,8 @@
 package com.wms.controller;
 
+import com.wms.api.outstorage.OutWarehouseBillSubVo;
+import com.wms.errorcode.ErrorCode;
+import com.wms.model.bo.outstorage.OutWarehouseBillSubBo;
 import com.xac.core.util.BeanListUtil;
 import com.wms.model.entity.OutWarehouseBillEntity;
 import com.wms.service.OutWarehouseBillService;
@@ -19,6 +22,9 @@ import org.springframework.beans.BeanUtils;
 import javax.validation.Valid;
 
 import com.xac.core.api.Paging;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <pre>
@@ -45,8 +51,30 @@ public class OutWarehouseBillController extends BaseController
     @ApiOperation(value = "添加OutWarehouseBill对象", notes = "添加出库单据", response = ApiResult.class)
     public ApiResult<Boolean> addOutWarehouseBill(@Valid @RequestBody OutWarehouseBillVo outWarehouseBill) throws Exception
     {
+        String requirementID = outWarehouseBill.getRequirementId();
+        if(null != requirementID && (!"".equals(requirementID)))
+        {
+            String billID = outWarehouseBillService.queryOutWarehouseBillIDByRequirementID(requirementID);
+            if(null != billID)
+            {
+                ApiResult apiResult = new ApiResult();
+                apiResult.setCode(ErrorCode.WAREHOUSE_REQUIREMENT_CODE_REPEAT);
+                apiResult.setMsg(ErrorCode.WAREHOUSE_REQUIREMENT_CODE_REPEAT_MESSAGE);
+                apiResult.setSuccess(false);
+                return apiResult;
+            }
+        }
+
         OutWarehouseBillBo bo = new OutWarehouseBillBo();
         BeanUtils.copyProperties(outWarehouseBill, bo);
+
+        List<OutWarehouseBillSubVo> outWarehouseBillSubVoList = outWarehouseBill.getOutWarehouseBillSubVoList();
+        if(null != outWarehouseBillSubVoList)
+        {
+            List<OutWarehouseBillSubBo> outWarehouseBillSubBoList  = new ArrayList<OutWarehouseBillSubBo>();
+            outWarehouseBillSubBoList = BeanListUtil.copyListProperties(outWarehouseBillSubVoList,OutWarehouseBillSubBo.class);
+            bo.setOutWarehouseBillSubBoList(outWarehouseBillSubBoList);
+        }
 
         boolean flag = outWarehouseBillService.saveOutWarehouseBill(bo);
         return ApiResult.result(flag);

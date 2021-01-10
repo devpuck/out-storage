@@ -7,6 +7,7 @@ import com.wms.model.bo.config.ConfigSepcOutWarehouseBo;
 import com.xac.core.api.Paging;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <pre>
@@ -62,5 +63,12 @@ public interface ConfigSepcOutWarehouseService extends BaseService<ConfigSepcOut
      * @throws Exception
      */
     Paging<ConfigSepcOutWarehouseBo> getConfigSepcOutWarehousePageList(ConfigSepcOutWarehouseQueryParam configSepcOutWarehouseQueryParam);
+
+    /**
+     * 查询仓库特殊配置
+     * @param warehouseCode
+     * @return
+     */
+    List<ConfigSepcOutWarehouseBo> queryWarehouseSpecConfig(String warehouseCode) throws Exception;
 
 }

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author: liuwenjie
+ * @author: puck
  * @date: 2020 10:05
  * @describe:
  * @vision
@@ -16,12 +16,14 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableTransactionManagement
 @ComponentScan(
-        basePackages = {"com.xac"}
+        basePackages = {"com.wms"}
 )
-@MapperScan("com.xac.*.mapper")
+@MapperScan("com.wms.mapper")
 @EnableDiscoveryClient
-public class Application {
-    public static void main(String[] args) {
+public class Application
+{
+    public static void main(String[] args)
+    {
         SpringApplication.run(Application.class, args);
         System.out.println("succeed!");
     }

@@ -19,6 +19,7 @@ import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -68,6 +69,13 @@ public class ConfigSepcOutWarehouseServiceImpl extends BaseServiceImpl<ConfigSep
         Page page = setPageParam(configSepcOutWarehouseQueryParam, OrderItem.desc(CoreConstant.CREATED_DATE));
         IPage<ConfigSepcOutWarehouseBo> iPage = configSepcOutWarehouseMapper.getConfigSepcOutWarehousePageList(page, configSepcOutWarehouseQueryParam);
         return new Paging(iPage);
+    }
+
+    @Override
+    public List<ConfigSepcOutWarehouseBo> queryWarehouseSpecConfig(String warehouseCode) throws Exception
+    {
+//        List<ConfigSepc>
+        return null;
     }
 
 }

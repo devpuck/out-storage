@@ -39,4 +39,5 @@ public interface ConfigOutWarehouseMapper extends BaseMapper<ConfigOutWarehouseE
      */
     IPage<ConfigOutWarehouseBo> getConfigOutWarehousePageList(@Param("page") Page page, @Param("param") ConfigOutWarehouseQueryParam configOutWarehouseQueryParam);
 
+
 }

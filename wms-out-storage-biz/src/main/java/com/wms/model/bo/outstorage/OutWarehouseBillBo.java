@@ -3,9 +3,11 @@ package com.wms.model.bo.outstorage;
 import com.xac.core.bo.BaseBo;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <pre>
@@ -17,7 +19,8 @@ import java.util.Date;
  */
 @Data
 @Accessors(chain = true)
-public class OutWarehouseBillBo extends BaseBo implements Serializable {
+public class OutWarehouseBillBo extends BaseBo implements Serializable
+{
     private static final long serialVersionUID = 1L;
 
     /**
@@ -104,5 +107,10 @@ public class OutWarehouseBillBo extends BaseBo implements Serializable {
      * 备注
      */
     private String note;
+
+    /**
+     * 出库子单列表
+     */
+    private List<OutWarehouseBillSubBo> outWarehouseBillSubBoList;
 
 }

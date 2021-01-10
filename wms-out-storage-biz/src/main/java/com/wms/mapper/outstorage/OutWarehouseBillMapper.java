@@ -39,4 +39,11 @@ public interface OutWarehouseBillMapper extends BaseMapper<OutWarehouseBillEntit
      */
     IPage<OutWarehouseBillBo> getOutWarehouseBillPageList(@Param("page") Page page, @Param("param") OutWarehouseBillQueryParam outWarehouseBillQueryParam);
 
+    /**
+     * 根据需求id查询单据ID
+     * @param requirementID
+     * @return
+     */
+    String queryOutWarehouseBillIDByRequirementID(String requirementID);
+
 }

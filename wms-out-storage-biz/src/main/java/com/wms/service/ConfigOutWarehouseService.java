@@ -5,8 +5,10 @@ import com.xac.core.service.BaseService;
 import com.wms.api.config.ConfigOutWarehouseQueryParam;
 import com.wms.model.bo.config.ConfigOutWarehouseBo;
 import com.xac.core.api.Paging;
+import sun.security.krb5.Config;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <pre>
@@ -62,5 +64,31 @@ public interface ConfigOutWarehouseService extends BaseService<ConfigOutWarehous
      * @throws Exception
      */
     Paging<ConfigOutWarehouseBo> getConfigOutWarehousePageList(ConfigOutWarehouseQueryParam configOutWarehouseQueryParam);
+
+    /**
+     *
+     * @param warehouseCode
+     * @param workCode
+     * @param dealCode
+     * @return
+     */
+    ConfigOutWarehouseBo queryOutWarehouseConfig(String warehouseCode, String workCode, String dealCode, String needProductionStatus);
+
+    /**
+     * 查询可以出库的列表
+     * @param warehouseCode
+     * @return
+     */
+    List<ConfigOutWarehouseBo> queryWarehouseConfig(String warehouseCode)  throws Exception;
+
+    /**
+     * 判断当前状态是否可以出库
+     * @param warehouseCode
+     * @param workCode
+     * @param dealCode
+     * @param status
+     * @return
+     */
+    boolean checkCanOutWarehouse(String warehouseCode,String workCode,String dealCode,String status);
 
 }

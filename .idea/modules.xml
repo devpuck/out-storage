@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/out-storage.iml" filepath="$PROJECT_DIR$/out-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wms-out-storage-api/wms-out-storage-api.iml" filepath="$PROJECT_DIR$/wms-out-storage-api/wms-out-storage-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wms-out-storage-biz/wms-out-storage-biz.iml" filepath="$PROJECT_DIR$/wms-out-storage-biz/wms-out-storage-biz.iml" />
+    </modules>
+  </component>
+</project>

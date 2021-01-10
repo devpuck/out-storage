@@ -30,7 +30,7 @@ import com.xac.core.api.Paging;
  */
 @Slf4j
 @RestController
-@RequestMapping("/config")
+@RequestMapping("/config/spec")
 @Api("出库业务配置 API")
 public class ConfigSepcOutWarehouseController extends BaseController
 {

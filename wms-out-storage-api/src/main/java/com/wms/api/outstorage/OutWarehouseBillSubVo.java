@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import com.xac.core.vo.BaseVo;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 import java.math.BigDecimal;
@@ -21,13 +22,14 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @ApiModel(value = "OutWarehouseBillSubVo对象", description = "出库单子表查询参数")
-public class OutWarehouseBillSubVo extends BaseVo implements Serializable {
+public class OutWarehouseBillSubVo extends BaseVo implements Serializable
+{
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "表id")
     private Long id;
 
-private String billCode;
+    private String billCode;
 
     @ApiModelProperty(value = "需求单子表ID")
     private String requirementSubId;
@@ -134,31 +136,31 @@ private String billCode;
     @ApiModelProperty(value = "接收部门")
     private String receiverHrDept;
 
-private String isConsignment;
+    private String isConsignment;
 
     @ApiModelProperty(value = "备注")
     private String details;
 
-private String attribute1;
+    private String attribute1;
 
-private String attribute2;
+    private String attribute2;
 
-private String attribute3;
+    private String attribute3;
 
-private String attribute4;
+    private String attribute4;
 
-private String attribute5;
+    private String attribute5;
 
-private String attribute6;
+    private String attribute6;
 
-private String attribute7;
+    private String attribute7;
 
-private String attribute8;
+    private String attribute8;
 
-private String attribute9;
+    private String attribute9;
 
-private String attribute10;
+    private String attribute10;
 
-private String version;
+    private String version;
 
 }

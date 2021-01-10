@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <pre>
@@ -76,4 +77,6 @@ public class OutWarehouseBillVo extends BaseVo implements Serializable
     @ApiModelProperty(value = "备注")
     private String note;
 
+    @ApiModelProperty(value = "出库子单列表")
+    private List<OutWarehouseBillSubVo> outWarehouseBillSubVoList;
 }

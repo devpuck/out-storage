@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import com.xac.core.vo.BaseVo;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 import java.util.Date;
@@ -20,7 +21,8 @@ import java.util.Date;
 @Data
 @Accessors(chain = true)
 @ApiModel(value = "ConfigOutWarehouseVo对象", description = "出库业务配置查询参数")
-public class ConfigOutWarehouseVo extends BaseVo implements Serializable {
+public class ConfigOutWarehouseVo extends BaseVo implements Serializable
+{
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "表id")

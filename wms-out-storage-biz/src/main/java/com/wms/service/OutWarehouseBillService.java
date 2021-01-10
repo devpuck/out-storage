@@ -25,7 +25,7 @@ public interface OutWarehouseBillService extends BaseService<OutWarehouseBillEnt
      * @return
      * @throws Exception
      */
-    boolean saveOutWarehouseBill(OutWarehouseBillBo outWarehouseBill);
+    boolean saveOutWarehouseBill(OutWarehouseBillBo outWarehouseBill)   throws Exception;
 
     /**
      * 修改
@@ -62,5 +62,12 @@ public interface OutWarehouseBillService extends BaseService<OutWarehouseBillEnt
      * @throws Exception
      */
     Paging<OutWarehouseBillBo> getOutWarehouseBillPageList(OutWarehouseBillQueryParam outWarehouseBillQueryParam);
+
+    /**
+     * 根据需求ID查询单据ID
+     * @param requirementID
+     * @return
+     */
+    String queryOutWarehouseBillIDByRequirementID(String requirementID);
 
 }
