@@ -127,6 +127,9 @@ public class OutWarehouseBillSubVo extends BaseVo implements Serializable
     @ApiModelProperty(value = "试料数量")
     private BigDecimal tryQuantity;
 
+    @ApiModelProperty(value = "已经出库数量")
+    private BigDecimal alreadyOutQuantity;
+
     @ApiModelProperty(value = "主单位")
     private String unit;
 

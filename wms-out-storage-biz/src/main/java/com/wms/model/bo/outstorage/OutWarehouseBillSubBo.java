@@ -189,6 +189,11 @@ public class OutWarehouseBillSubBo extends BaseBo implements Serializable {
     private BigDecimal tryQuantity;
 
     /**
+     * 已经出库数量
+     */
+    private BigDecimal alreadyOutQuantity;
+
+    /**
      * 主单位
      */
     private String unit;
