@@ -46,4 +46,11 @@ public interface OutWarehouseBillMapper extends BaseMapper<OutWarehouseBillEntit
      */
     String queryOutWarehouseBillIDByRequirementID(String requirementID);
 
+    /**
+     * 根据需求编号查询需求单ID
+     * @param billCode
+     * @return
+     */
+    String queryOutWarehouseBillIDbyBillCode(String billCode);
+
 }

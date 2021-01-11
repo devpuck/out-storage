@@ -129,4 +129,10 @@ public class OutWarehouseBillServiceImpl extends BaseServiceImpl<OutWarehouseBil
         return outWarehouseBillMapper.queryOutWarehouseBillIDByRequirementID(requirementID);
     }
 
+    @Override
+    public String queryOutWarehouseBillIDByBillCode(String billCode)
+    {
+        return null;
+    }
+
 }

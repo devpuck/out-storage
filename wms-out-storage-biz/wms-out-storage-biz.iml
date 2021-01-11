@@ -13,7 +13,6 @@
     <orderEntry type="library" name="Maven: com.wms:wms-sdk:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.wms:wms-wh-manager-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.wms:wms-requirements-manager-api:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.wms:wms-account-manager-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.wms:wms-in-storage-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.2.RELEASE" level="project" />
@@ -89,6 +88,7 @@
     <orderEntry type="library" name="Maven: com.oracle.database.nls:orai18n:19.8.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.wms:wms-core:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="wms-out-storage-api" />
+    <orderEntry type="library" name="Maven: com.wms:wms-account-manager-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.xac.core:xac-core:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-spring-web:2.9.2" level="project" />

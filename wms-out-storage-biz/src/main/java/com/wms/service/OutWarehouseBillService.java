@@ -70,4 +70,11 @@ public interface OutWarehouseBillService extends BaseService<OutWarehouseBillEnt
      */
     String queryOutWarehouseBillIDByRequirementID(String requirementID);
 
+    /**
+     * 根据出库单编号查询出库单ID
+     * @param billCode
+     * @return
+     */
+    String queryOutWarehouseBillIDByBillCode(String billCode);
+
 }

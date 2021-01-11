@@ -51,10 +51,24 @@ public class OutWarehouseBillController extends BaseController
     @ApiOperation(value = "添加OutWarehouseBill对象", notes = "添加出库单据", response = ApiResult.class)
     public ApiResult<Boolean> addOutWarehouseBill(@Valid @RequestBody OutWarehouseBillVo outWarehouseBill) throws Exception
     {
-        String requirementID = outWarehouseBill.getRequirementId();
-        if(null != requirementID && (!"".equals(requirementID)))
+//        String requirementID = outWarehouseBill.getRequirementId();
+//        if(null != requirementID && (!"".equals(requirementID)))
+//        {
+//            String billID = outWarehouseBillService.queryOutWarehouseBillIDByRequirementID(requirementID);
+//            if(null != billID)
+//            {
+//                ApiResult apiResult = new ApiResult();
+//                apiResult.setCode(ErrorCode.WAREHOUSE_REQUIREMENT_CODE_REPEAT);
+//                apiResult.setMsg(ErrorCode.WAREHOUSE_REQUIREMENT_CODE_REPEAT_MESSAGE);
+//                apiResult.setSuccess(false);
+//                return apiResult;
+//            }
+//        }
+
+        String billCode = outWarehouseBill.getBillCode();
+        if(null != billCode && (!"".equals(billCode)))
         {
-            String billID = outWarehouseBillService.queryOutWarehouseBillIDByRequirementID(requirementID);
+            String billID = outWarehouseBillService.queryOutWarehouseBillIDByBillCode(billCode);
             if(null != billID)
             {
                 ApiResult apiResult = new ApiResult();

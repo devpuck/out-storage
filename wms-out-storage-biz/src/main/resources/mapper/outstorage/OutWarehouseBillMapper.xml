@@ -85,5 +85,8 @@
     <select id="queryOutWarehouseBillIDByRequirementID" resultType="java.lang.String">
         select ID from WMS_OUT_WAREHOUSE_BILL where REQUIREMENT_ID = #{requirementID} and  IS_DELETED=0
     </select>
+    <select id="queryOutWarehouseBillIDbyBillCode" resultType="java.lang.String">
+        select ID from WMS_OUT_WAREHOUSE_BILL where BILL_CODE = #{billCode} and  IS_DELETED=0
+    </select>
 
 </mapper>
