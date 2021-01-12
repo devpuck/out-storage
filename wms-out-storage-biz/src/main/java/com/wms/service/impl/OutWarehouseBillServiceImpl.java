@@ -1,5 +1,6 @@
 package com.wms.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.wms.model.bo.outstorage.OutWarehouseBillSubBo;
 import com.wms.model.entity.OutWarehouseBillSubEntity;
 import com.wms.service.OutWarehouseBillSubService;
@@ -110,9 +111,34 @@ public class OutWarehouseBillServiceImpl extends BaseServiceImpl<OutWarehouseBil
     }
 
     @Override
-    public OutWarehouseBillBo getOutWarehouseBillById(Serializable id)
+    public OutWarehouseBillBo getOutWarehouseBillById(Serializable id)  throws Exception
     {
-        return outWarehouseBillMapper.getOutWarehouseBillById(id);
+        OutWarehouseBillBo outWarehouseBillBo =  outWarehouseBillMapper.getOutWarehouseBillById(id);
+        if(null != outWarehouseBillBo)
+        {
+            List<OutWarehouseBillSubBo> outWarehouseBillSubBoList = outWarehouseBillSubService.queryOutWarehouseBillSubByBillCode(outWarehouseBillBo.getBillCode());
+            outWarehouseBillBo.setOutWarehouseBillSubBoList(outWarehouseBillSubBoList);
+        }
+
+        return outWarehouseBillBo;
+    }
+
+    @Override
+    public OutWarehouseBillBo queryOutWarehouseBillByCode(String billCode)   throws Exception
+    {
+        OutWarehouseBillEntity outWarehouseBillEntity = outWarehouseBillMapper.selectOne(new QueryWrapper<OutWarehouseBillEntity>().lambda()
+                .eq(OutWarehouseBillEntity::getBillCode,billCode));
+        if(null != outWarehouseBillEntity)
+        {
+            OutWarehouseBillBo outWarehouseBillBo = new OutWarehouseBillBo();
+            BeanUtils.copyProperties(outWarehouseBillEntity,outWarehouseBillBo);
+
+            List<OutWarehouseBillSubBo> outWarehouseBillSubBoList = outWarehouseBillSubService.queryOutWarehouseBillSubByBillCode(billCode);
+            outWarehouseBillBo.setOutWarehouseBillSubBoList(outWarehouseBillSubBoList);
+
+            return outWarehouseBillBo;
+        }
+        return null;
     }
 
     @Override

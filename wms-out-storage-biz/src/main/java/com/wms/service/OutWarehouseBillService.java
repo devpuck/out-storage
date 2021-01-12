@@ -52,7 +52,14 @@ public interface OutWarehouseBillService extends BaseService<OutWarehouseBillEnt
      * @return
      * @throws Exception
      */
-    OutWarehouseBillBo getOutWarehouseBillById(Serializable id);
+    OutWarehouseBillBo getOutWarehouseBillById(Serializable id)  throws Exception;
+
+    /**
+     * 根据订单编号查询出库单
+     * @param billCode
+     * @return
+     */
+    OutWarehouseBillBo queryOutWarehouseBillByCode(String billCode)  throws Exception;
 
     /**
      * 获取分页对象

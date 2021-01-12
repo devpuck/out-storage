@@ -17,7 +17,7 @@ import java.io.Serializable;
  * </pre>
  *
  * @author puck
- * @since 2021-01-10
+ * @since 2021-01-11
  */
 @Repository
 public interface ConfigSpecOutWarehouseMapper extends BaseMapper<ConfigSpecOutWarehouseEntity> {

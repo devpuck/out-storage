@@ -7,6 +7,7 @@ import com.wms.model.bo.outstorage.OutWarehouseBillSubBo;
 import com.xac.core.api.Paging;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <pre>
@@ -62,5 +63,12 @@ public interface OutWarehouseBillSubService extends BaseService<OutWarehouseBill
      * @throws Exception
      */
     Paging<OutWarehouseBillSubBo> getOutWarehouseBillSubPageList(OutWarehouseBillSubQueryParam outWarehouseBillSubQueryParam);
+
+    /**
+     *
+     * @param billCode
+     * @return
+     */
+    List<OutWarehouseBillSubBo> queryOutWarehouseBillSubByBillCode(String billCode)  throws Exception;
 
 }

@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </pre>
  *
  * @author puck
- * @since 2021-01-10
+ * @since 2021-01-11
  */
 public interface ConfigSpecOutWarehouseService extends BaseService<ConfigSpecOutWarehouseEntity> {
 
